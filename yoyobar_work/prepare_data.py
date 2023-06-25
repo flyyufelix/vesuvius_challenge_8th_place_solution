@@ -1,12 +1,13 @@
 from Modules import *
 
-def main(json_path="./SETTINGS.json"):
-    with open(json_path,"r") as f:
-        cfg=json.load(f)
-    dataset_path=cfg["RAW_DATA_DIR"]
-    target=cfg["CLEAN_DATA_DIR"]+"/alex/"
+def main():
+    dataset_path=PATH["RAW_DATA_DIR"]
+    target=PATH["CLEAN_DATA_DIR"]+"/alex/"
     a=6000
-
+    
+    if not os.path.exists(target):
+        os.mkdir(target)
+    
 
 
     for i in ["2a","2b"]:

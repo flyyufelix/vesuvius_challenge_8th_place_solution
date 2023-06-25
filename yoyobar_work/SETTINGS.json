@@ -1,5 +1,0 @@
-{"RAW_DATA_DIR":"./vc_raw_data/",
-"CLEAN_DATA_DIR":"/root/autodl-tmp/",
-"TRAIN_DATA_CLEAN_PATH":"/root/autodl-tmp/",
-"CHECKPOINT_DIR":"./checkpoints/",
-"MODEL_DIR":"./final_model/"}

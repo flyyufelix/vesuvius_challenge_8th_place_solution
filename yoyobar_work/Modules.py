@@ -37,6 +37,17 @@ from timm.scheduler import CosineLRScheduler
 
 warnings.filterwarnings("ignore")
 
+PATH={"RAW_DATA_DIR":"./vc_raw_data/",
+"CLEAN_DATA_DIR":"./clean_data/",
+"TRAIN_DATA_CLEAN_PATH":"./clean_data/",
+"CHECKPOINT_DIR":"./checkpoints/",
+"MODEL_DIR":"./final_model/"}
+
+for v in PATH.values():
+    if not os.path.exists(v):
+        os.mkdir(v)
+
+
 class CFG:
     # ============== comp xxexp name =============
     comp_dataset_path = '/root/autodl-tmp/'

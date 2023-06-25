@@ -1,16 +1,14 @@
 from .train_sub import train_
 from .Modules import *
 
-def main(json_path="./SETTINGS.json"):
-    with open(json_path,"r") as f:
-        cfg=json.load(f)
-    CFG.comp_dataset_path=cfg["TRAIN_DATA_CLEAN_PATH"]+"alex/"
-    CFG.model_dir=cfg["CHECKPOINT_DIR"]+"alex/"
+def main():
+    CFG.comp_dataset_path=PATH["TRAIN_DATA_CLEAN_PATH"]+"alex/"
+    CFG.model_dir=PATH["CHECKPOINT_DIR"]+"alex/"
     
     if not os.path.exists(CFG.model_dir):
         os.mkdir(CFG.model_dir)
         
-    final_model_path=cfg["MODEL_DIR"]="se_resnet101.pth"
+    final_model_path=PATH["MODEL_DIR"]+"se_resnet101.pth"
 
     CFG.valid_id='2a'
 
