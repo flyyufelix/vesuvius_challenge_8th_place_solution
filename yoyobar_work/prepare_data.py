@@ -1,6 +1,6 @@
-from .Modules import *
+from Modules import *
 
-def main(json_path="../SETTINGS.json"):
+def main(json_path="./SETTINGS.json"):
     with open(json_path,"r") as f:
         cfg=json.load(f)
     dataset_path=cfg["RAW_DATA_DIR"]
