@@ -52,7 +52,7 @@ We have created a kaggle dataset titled `vesuvius-8th-place-solution-models` wit
 ```
 $ kaggle datasets download -d renman/vesuvius-8th-place-solution-models
 ```
-You will see a `final_models` directory that contains all the models checkpoints
+Unzip `vesuvius-8th-place-solution-models` and you will see a `final_models` directory that contains all the models checkpoints
 
 ### Run inference code
 ```
