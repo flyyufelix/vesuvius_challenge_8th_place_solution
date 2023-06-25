@@ -52,7 +52,7 @@ We have created a kaggle dataset titled `vesuvius-8th-place-solution-models` wit
 ```
 $ kaggle datasets download -d renman/vesuvius-8th-place-solution-models
 ```
-You will see a `models` directory that contains all the models checkpoints
+You will see a `final_models` directory that contains all the models checkpoints
 
 ### Run inference code
 ```
@@ -65,4 +65,4 @@ This is to run the training pipeline to regenerate all the models we have used f
 ```
 $ make reproduce_models
 ```
-Notice that all reproduced models are automatically being copied to the `models` directory to be consumed by the inference script. No manual model copy and pasting is required.
+Notice that all reproduced models are automatically being copied to the `final_models` directory to be consumed by the inference script. No manual model copy and pasting is required.
