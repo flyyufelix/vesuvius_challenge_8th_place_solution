@@ -16,14 +16,18 @@ def main(json_path="./SETTINGS.json"):
 
 
     CFG.label_size=96
+    CFG.model_input_size=CFG.label_size+CFG.ex_size
+    CFG.train_load_size=CFG.model_input_size
+    CFG.stride = CFG.label_size // 2
     CFG.train_batch_size=128
+    CFG.valid_batch_size=CFG.train_batch_size*2
     CFG.scheduler=True
     CFG.lr=2e-4
     CFG.chan_start=15 #16
     CFG.in_chans = 16 #12
     CFG.load_chans=30 #26
     CFG.total_per_epoch=40000
-    CFG.epochs=70
+    CFG.epochs=50+20
     model,name=train_(CFG,break_fc=lambda x:x["ep"]>50,save_fc=lambda x:x%5==0)
     file_name=f"/final_v{CFG.valid_id}_lbs{CFG.label_size}_init/"
     if not os.path.exists(CFG.model_dir+file_name):
@@ -34,15 +38,19 @@ def main(json_path="./SETTINGS.json"):
     
     ###############################################################
     
-    CFG.label_size=96
-    CFG.train_batch_size=128
+    CFG.label_size=192
+    CFG.model_input_size=CFG.label_size+CFG.ex_size
+    CFG.train_load_size=CFG.model_input_size
+    CFG.stride = CFG.label_size // 2
+    CFG.train_batch_size=32
+    CFG.valid_batch_size=CFG.train_batch_size*2
     CFG.scheduler=False
     CFG.lr=2e-5
     CFG.chan_start=15 #16
     CFG.in_chans = 20 #12
     CFG.load_chans=30 #26
-    CFG.total_per_epoch=40000
-    CFG.epochs=150
+    CFG.total_per_epoch=20000
+    CFG.epochs=100
     model,name=train_(CFG,save_fc=lambda x:x%5==0)
     file_name=f"/final_v{CFG.valid_id}_lbs{CFG.label_size}_low_lr/"
     if not os.path.exists(CFG.model_dir+file_name):
@@ -53,13 +61,17 @@ def main(json_path="./SETTINGS.json"):
 
     ################################################################################
     CFG.label_size=256
+    CFG.model_input_size=CFG.label_size+CFG.ex_size
+    CFG.train_load_size=CFG.model_input_size
+    CFG.stride = CFG.label_size // 2
     CFG.train_batch_size=24
+    CFG.valid_batch_size=CFG.train_batch_size*2
     CFG.scheduler=False
     CFG.lr=2e-5
     CFG.chan_start=15
     CFG.in_chans = 20
     CFG.load_chans=30
-    CFG.total_per_epoch=20000
+    CFG.total_per_epoch=10000
     CFG.epochs=20
     model,name=train_(CFG,save_fc=lambda x:x%5==0)
     file_name=f"/final_v{CFG.valid_id}_lbs{CFG.label_size}/"
