@@ -44,7 +44,7 @@ $ make prepare_data
 ```
 
 ## Replicate Submission
-This is to replicate our final submission notebook (public LB: 0.792859 / private LB: 0.55514).
+This is to replicate our final submission notebook (public LB: 0.792859 / private LB: 0.655514).
 
 We have created a kaggle dataset titled `vesuvius-8th-place-solution-models` with all the model checkpoints required to run the inference script.
 
