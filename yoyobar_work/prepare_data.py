@@ -28,7 +28,7 @@ def main():
     cv2.imwrite(target + f"train/2b/inklabels.png", label[a:], [cv2.IMWRITE_PNG_COMPRESSION, 9])
 
     for path in tqdm(paths):
-        index=path.split('.')[0].split("/")[-1]
+        index=path.split('/')[-1].split('.')[0]
         image = cv2.imread(path, 0)
         cv2.imwrite(target + f"train/2a/surface_volume/{index}.png", image[:a], [cv2.IMWRITE_PNG_COMPRESSION, 9])
         cv2.imwrite(target + f"train/2b/surface_volume/{index}.png", image[a:], [cv2.IMWRITE_PNG_COMPRESSION, 9])
