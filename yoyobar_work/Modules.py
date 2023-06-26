@@ -255,7 +255,7 @@ class Module(nn.Module):
                         device=None):
         init_ot=False
         if not os.path.exists(load_path):
-            print_selective("load path error",pass_=all_pass)
+            #print_selective("load path error",pass_=all_pass)
             return None
         print_selective("loading checkpoint...",pass_=all_pass)
         
