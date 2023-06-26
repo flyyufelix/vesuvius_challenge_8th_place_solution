@@ -2,8 +2,10 @@ from train_sub import train_
 from Modules import *
 
 def main():
-    CFG.comp_dataset_path=PATH["TRAIN_DATA_CLEAN_PATH"]+"alex/"
-    CFG.model_dir=PATH["CHECKPOINT_DIR"]+"alex/"
+    #CFG.comp_dataset_path=PATH["TRAIN_DATA_CLEAN_PATH"]+"alex/"
+    #CFG.model_dir=PATH["CHECKPOINT_DIR"]+"alex/"
+    CFG.comp_dataset_path=PATH["TRAIN_DATA_CLEAN_PATH"]
+    CFG.model_dir=PATH["CHECKPOINT_DIR"]
     
     if not os.path.exists(CFG.model_dir):
         os.mkdir(CFG.model_dir)

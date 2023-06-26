@@ -2,7 +2,8 @@ from Modules import *
 
 def main():
     dataset_path=PATH["RAW_DATA_DIR"]
-    target=PATH["CLEAN_DATA_DIR"]+"alex/"
+    #target=PATH["CLEAN_DATA_DIR"]+"alex/"
+    target=PATH["CLEAN_DATA_DIR"]
     a=6000
     
     if not os.path.exists(target):

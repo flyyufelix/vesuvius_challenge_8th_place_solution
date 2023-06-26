@@ -6,6 +6,7 @@ import torch as tc
 import random
 from torch.utils.data import DataLoader, Dataset
 import torch
+import shutil
 from glob import glob
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
@@ -35,13 +36,18 @@ from torch.cuda.amp.grad_scaler import GradScaler
 from typing import List, Optional,Tuple
 from timm.scheduler import CosineLRScheduler
 
+sys.path.extend([".",".."])
+from paths import raw_data_dir, clean_data_dir, checkpoint_dir, final_model_dir, train_data_dir
+
 warnings.filterwarnings("ignore")
 
-PATH={"RAW_DATA_DIR":"./vc_raw_data/",
-"CLEAN_DATA_DIR":"./clean_data/",
-"TRAIN_DATA_CLEAN_PATH":"./clean_data/",
-"CHECKPOINT_DIR":"./checkpoints/",
-"MODEL_DIR":"./final_model/"}
+PATH = {
+    "RAW_DATA_DIR": raw_data_dir,
+    "CLEAN_DATA_DIR": clean_data_dir,
+    "TRAIN_DATA_CLEAN_PATH": train_data_dir,
+    "CHECKPOINT_DIR": checkpoint_dir,
+    "MODEL_DIR": final_model_dir
+}
 
 for v in PATH.values():
     if not os.path.exists(v):
