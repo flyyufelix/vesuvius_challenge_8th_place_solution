@@ -1,5 +1,5 @@
-from .train_sub import train_
-from .Modules import *
+from train_sub import train_
+from Modules import *
 
 def main():
     CFG.comp_dataset_path=PATH["TRAIN_DATA_CLEAN_PATH"]+"alex/"

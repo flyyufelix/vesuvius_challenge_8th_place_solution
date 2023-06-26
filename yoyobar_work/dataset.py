@@ -1,4 +1,4 @@
-from .Modules import *
+from Modules import *
 
 def load_raw_image(fragment_id):
     start = CFG.chan_start

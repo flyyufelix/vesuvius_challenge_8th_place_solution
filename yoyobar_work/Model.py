@@ -1,5 +1,5 @@
-from .Modules import *
-from .resnet3d import Resnet3d
+from Modules import *
+from resnet3d import Resnet3d
 
 class Model(Module):
     def __init__(self,cfg=CFG,loss_fc=nn.MSELoss()):

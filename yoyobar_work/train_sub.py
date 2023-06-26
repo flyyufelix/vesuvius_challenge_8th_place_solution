@@ -1,6 +1,6 @@
-from .Modules import *
-from .Model import Model
-from .dataset import *
+from Modules import *
+from Model import Model
+from dataset import *
 
 def train_(cfg=CFG,break_fc=lambda x:False,save_fc=lambda x:x%3==0):
     tc.backends.cudnn.enabled = True
