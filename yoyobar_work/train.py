@@ -79,3 +79,6 @@ def main():
     os.system(f"rm {CFG.model_dir}*.pth")
     tc.save(model.state_dict(), CFG.model_dir+f"/now.pth")
     tc.save(model.state_dict(), final_model_path)
+
+if __name__ == "__main__":
+    main()
