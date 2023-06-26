@@ -115,6 +115,7 @@ def train_(cfg=CFG,break_fc=lambda x:False,save_fc=lambda x:x%3==0):
 
         if break_fc({"tl":mloss_train,"vl":mloss_val,"vp":bast_fbeta,"ep":epoch}):
             return model,f"/{cfg.backbone}_epoch_{epoch}_tl{mloss_train:.3f}_vl{mloss_val:.3f}_vp{bast_fbeta:.3f}.pth"
+    return model,f"/{cfg.backbone}_epoch_{epoch}_tl{mloss_train:.3f}_vl{mloss_val:.3f}_vp{bast_fbeta:.3f}.pth"
 
 if __name__=="__main__":
     train_()

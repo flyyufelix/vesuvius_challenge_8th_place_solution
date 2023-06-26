@@ -23,9 +23,9 @@ def main():
     CFG.valid_batch_size=CFG.train_batch_size*2
     CFG.scheduler=True
     CFG.lr=2e-4
-    CFG.chan_start=15 #16
-    CFG.in_chans = 16 #12
-    CFG.load_chans=30 #26
+    CFG.chan_start=16
+    CFG.in_chans = 16
+    CFG.load_chans=24
     CFG.total_per_epoch=40000
     CFG.epochs=50+20
     model,name=train_(CFG,break_fc=lambda x:x["ep"]>50,save_fc=lambda x:x%5==0)
@@ -46,9 +46,9 @@ def main():
     CFG.valid_batch_size=CFG.train_batch_size*2
     CFG.scheduler=False
     CFG.lr=2e-5
-    CFG.chan_start=15 #16
-    CFG.in_chans = 20 #12
-    CFG.load_chans=30 #26
+    CFG.chan_start=16
+    CFG.in_chans = 16
+    CFG.load_chans=24
     CFG.total_per_epoch=20000
     CFG.epochs=100
     model,name=train_(CFG,save_fc=lambda x:x%5==0)
