@@ -1,23 +1,23 @@
 # Kaggle Vesuvius Ink Detection Challenge
 Code for 8th place solution in Kaggle Vesuvius Ink Detection Challenge.
 
-Please refer to [this Kaggle forum post](https://www.kaggle.com/competitions/vesuvius-challenge-ink-detection/discussion/417383) for a description of the solution 
+Please refer to [this Kaggle forum post](https://www.kaggle.com/competitions/vesuvius-challenge-ink-detection/discussion/417383) for a description of the solution
 
-## A Word on the Directory Structure 
-Since we only formed team in the last week of the competition, our work are mostly independently and are located in two separated folders respectively (i.e. `felix_work` and `yoyobar_work`). That said, we have made the pipeline for inference and models reproduction as simple as possible.  
+## A Word on the Directory Structure
+Since we only formed team in the last week of the competition, our work are mostly independently and are located in two separated folders respectively (i.e. `felix_work` and `yoyobar_work`). That said, we have made the pipeline for inference and models reproduction as simple as possible.
 
 ## Hardware Use
 
-Felix: 
+Felix:
 
 CPU: Intel i7-13700KF
 GPU: 3090 x 1
 RAM: 64GB
 
-Yoyobar: 
+Yoyobar:
 
-CPU: 15 vCPU Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz 
-GPU: 4090 x 1  
+CPU: 15 vCPU Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz
+GPU: 4090 x 1
 RAM: 80GB
 
 ## Environment
@@ -29,7 +29,10 @@ pip install -r requirements.txt
 ```
 
 ## Prepare dataset
-### Download competition dataset 
+### Download competition dataset
+As our work are separated, two independent data pipelines are required to run our code. Please follow the procedure below to put the competition data at the right place.
+
+First download the competition dataset and place them inside `felix_work` folder:
 ```
 $ cd felix_work
 $ kaggle competitions download -c vesuvius-challenge-ink-detection
@@ -37,7 +40,17 @@ $ unzip vesuvius-challenge-ink-detection.zip
 ```
 After unzipping, you will see two folders `train` and `test` that contains the train and test data for the competition are created
 
-### Data Transformation (e.g. create CV folds and resize images)
+Next, go to yoyobar_work folder and create symbolic links to the competition dataset
+```
+$ cd ../yoyobar_work
+$ mkdir competition_dataset
+$ ln -s ../felix_work/train train
+$ ln -s ../felix_work/test test
+```
+You will see two symbolic links `train` and `test` created inside the folder `yoyobar_work/competition_data` . We are now ready to run the data transformation pipeline.
+
+
+### Data Transformation (e.g. create CV folds)
 Navigate to the project root directory where the `Makefile` is located. Issue the following `make` command
 ```
 $ make prepare_data
