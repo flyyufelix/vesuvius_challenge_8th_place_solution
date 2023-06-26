@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ## Prepare dataset
 ### Download competition dataset
-As our work are separated, two independent data pipelines are required to run our code. Please follow the procedure below to put the competition data at the right place.
+As our work are most done separately, two independent data pipelines are required to run our code. Please follow the procedure below to place the competition data at the right place.
 
 First download the competition dataset and place them inside `felix_work` folder:
 ```
@@ -38,9 +38,9 @@ $ cd felix_work
 $ kaggle competitions download -c vesuvius-challenge-ink-detection
 $ unzip vesuvius-challenge-ink-detection.zip
 ```
-After unzipping, you will see two folders `train` and `test` that contains the train and test data for the competition are created
+After unzipping, you will see two folders `train` and `test` that contains the train and test data for the competition are created.
 
-Next, go to yoyobar_work folder and create symbolic links to the competition dataset
+Next, go to `yoyobar_work` folder and create symbolic links to point to the competition dataset we just downloaded
 ```
 $ cd ../yoyobar_work
 $ mkdir competition_dataset
