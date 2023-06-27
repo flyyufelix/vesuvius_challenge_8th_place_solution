@@ -22,10 +22,11 @@ RAM: 80GB
 
 ## Environment
 All requirements should be detailed in requirements.txt. Using Anaconda is strongly recommended.
+
+Use the command below to create a new conda environment named `vesuvius` where all the necessary packages are installed
 ```
-conda create -n vesuvius python=3.8
+conda env create -f environment.yml
 conda activate vesuvius
-pip install -r requirements.txt
 ```
 
 ## Prepare dataset
