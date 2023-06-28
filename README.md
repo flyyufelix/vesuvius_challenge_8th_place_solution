@@ -44,9 +44,10 @@ After unzipping, you will see two folders `train` and `test` that contains the t
 Next, go to `yoyobar_work` folder and create symbolic links to point to the competition dataset we just downloaded
 ```
 $ cd ../yoyobar_work
-$ mkdir competition_dataset
-$ ln -s ../felix_work/train train
-$ ln -s ../felix_work/test test
+$ mkdir competition_data
+$ cd competition_data
+$ ln -s ../../felix_work/train train
+$ ln -s ../../felix_work/test test
 ```
 You will see two symbolic links `train` and `test` created inside the folder `yoyobar_work/competition_data` . We are now ready to run the data transformation pipeline.
 
