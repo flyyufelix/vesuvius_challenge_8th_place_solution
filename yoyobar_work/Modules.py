@@ -37,7 +37,7 @@ from typing import List, Optional,Tuple
 from timm.scheduler import CosineLRScheduler
 
 sys.path.extend([".",".."])
-from paths import raw_data_dir, clean_data_dir, checkpoint_dir, final_model_dir, train_data_dir
+from paths import raw_data_dir, clean_data_dir, checkpoint_dir, models_path, train_data_dir
 
 warnings.filterwarnings("ignore")
 
@@ -46,7 +46,7 @@ PATH = {
     "CLEAN_DATA_DIR": clean_data_dir,
     "TRAIN_DATA_CLEAN_PATH": train_data_dir,
     "CHECKPOINT_DIR": checkpoint_dir,
-    "MODEL_DIR": final_model_dir
+    "MODEL_DIR": models_path
 }
 
 for v in PATH.values():
