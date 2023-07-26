@@ -21,7 +21,7 @@ GPU: 4090 x 1
 RAM: 80GB
 
 ## Environment
-All requirements should be detailed in requirements.txt. Using Anaconda is strongly recommended.
+All requirements should be detailed in environment.yml. Using Anaconda is strongly recommended.
 
 Use the command below to create a new conda environment named `vesuvius` where all the necessary packages are installed
 ```
